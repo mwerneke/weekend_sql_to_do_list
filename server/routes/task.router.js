@@ -16,12 +16,13 @@ router.get('/', (req, res) => {
   });
 
 router.post('/',  (req, res) => {
-  let newTask = req.body;
-  console.log(`Adding Task`, newTask);
-
-  let queryText = `INSERT INTO "tasks" ("task")
+  
+    let sqlQuery = `INSERT INTO "tasks" ("task")
                    VALUES ($1);`;
-  pool.query(queryText, [newTask.task])
+    let sqlParams = [
+        req.body.task
+    ]
+    pool.query(sqlQuery, sqlParams)
     .then(result => {
       res.sendStatus(201);
     })

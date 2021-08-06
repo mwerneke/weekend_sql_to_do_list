@@ -16,16 +16,18 @@ function addClickHandler() {
 
 function add(){
     console.log('Submit Btn Clicked', add);
-    let task = {};
-    task.task =$(`#task`)
+    let task = {
+    task:$(`#task`).val()
+    };
+    
     addTask(task);
 }
 
-function addTask(taskToAdd) {
+function addTask(task) {
     $.ajax({
       type: 'POST',
       url: '/task',
-      data: taskToAdd,
+      data: task,
       }).then(function(response) {
         console.log('Response from server.', response);
         refreshTask();

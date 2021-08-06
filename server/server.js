@@ -8,7 +8,8 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static('server/public'));
 
 
-app.use('/task', task.Router);
+let taskrouter =('./routes/task.router');
+app.use('/task', taskrouter);
 
 
 const PORT = 5000;
