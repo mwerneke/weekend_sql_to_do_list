@@ -15,12 +15,12 @@ You are going to create a 'TO DO' application. This type of application is very 
 **Here are the specific components for the challenge:**
 
 [x] Create an inpute to store a task
-[] On create button, it should be store in Databse
-[] When task is created, it should be appended to DOM showing tasks to be completed
-[] Each inserted task should have a deleteBtn and completeBtn
+[x] On create button, it should be store in Databse
+[x] When task is created, it should be appended to DOM showing tasks to be completed
+[x] Each inserted task should have a deleteBtn and completeBtn
 [] Make sure that when task is marked complete, the container on Dom changes it from Gray to Green  -- in CSS
 [] In Database have Completed Column True or False - Boolean
-[] When Deleted, it should be removed from front and back end
+[x] When Deleted, it should be removed from front and back end
 
 
 ### Styling

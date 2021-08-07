@@ -2,82 +2,71 @@ $(document).ready(onReady);
 
 function onReady(){
     console.log('JS Sourced');
-    addClickHandler();
-    refreshTask();
-
+    $('#submit-task').on('click', addTask);
+    getTask();
+    $('#taskToTableBody').on('click', '.deleteBtn', deleteTheTask);
+    $('#taskToTableBody').on('click', '.completeBtn', Complete)
+     
 };
-
-function addClickHandler() {
-    // Get info to send to the server
-   $('#submit-task').on('click', add);
-   $('#taskToTableBody').on('click', '.deleteBtn', deleteTheTask);
-    $('#taskToTableBody').on('click', '.completeBtn', markAsComplete)
-}
-
-function add(){
-    console.log('Submit Btn Clicked', add);
-    let task = {
-    task:$(`#task`).val()
-    };
     
-    addTask(task);
-}
-
-function addTask(task) {
+function addTask() {
+    let task = {
+    task:$(`#task`).val(),
+    is_complete: false
+    }   
     $.ajax({
       type: 'POST',
       url: '/task',
       data: task,
       }).then(function(response) {
         console.log('Response from server.', response);
-        refreshTask();
-      }).catch(function(error) {
-        console.log('Error in POST', error)
-        alert('Unable to add Task at this time. Please try again later.');
-      });
+        getTask()
+        $('#task').val('');
+    });
+    
+  
   }
 
-  function deleteTheTask(){
-    //console.log($(this));
-    const taskId = $(this).closest('tr').data('id')
-    $.ajax({
-        type: 'DELETE',
-        url: `/task/${taskId}`,
-    }).then(function(res){
-        refreshTask();
-    })
-  }
+   function deleteTheTask(){
+     //console.log($(this));
+     let taskId = $(this).closest('tr').data('id')
+     $.ajax({
+         type: 'DELETE',
+         url: `/task/${taskId}`,
+     }).then(function(res){
+         getTask();
+     })
+   }
 
-  function refreshTask(){
+  function getTask(){
     $.ajax({
         type: 'GET',
         url: '/task'
-      }).then(function(response) {
-        console.log(response);
-        renderTask(response);
-      }).catch(function(error){
-        console.log('error in GET', error);
+      }).then(function(res) {
+        console.log(res);
+        renderTask(res);
+      }).catch(function(err){
+        console.log('error in GET', err);
         });
-    }  //must complete
+    }  
 
   
-  function markAsComplete(){
-    //console.log('read', $(this));
+  function Complete(){
+    console.log('complete', $(this));
     let tr = $(this).parents('tr');
-    //console.log('tr', tr);
+    console.log('tr', tr);
     let id = tr.data('id');
-    //console.log('datarow', id);
-  
+    console.log('datarow', id);
+    
     $.ajax({
         method: 'PUT',
-        url: `/task/${id}`,
-        data: {}
+        url: `/task/${id}`, //POSSIBLE BUGGGGGGG!!!
     }).then((res) => {
-      //console.log('PUT Task', res);
-      refreshTask();
+        console.log('PUT Task', res);
+ //   //  getTask();
     }).catch((err) => {
-      //console.log('PUT /Task error',err);
-      alert('PUT TASKS FAILED')
+        console.log('PUT /Task error',err);
+        alert('PUT TASKS FAILED')
     });
   }
 
@@ -85,11 +74,10 @@ function addTask(task) {
     $('#taskToTableBody').empty();
   
     for(let i = 0; i < task.length; i += 1) {
-      let task = task[i];
-      // For each book, append a new row to our table
+      // For each Task, append 
       $('#taskToTableBody').append(`
-        <tr data-id=${task.id}>
-          <td>${task.task}</td>
+        <tr data-id=${task[i].id}>
+          <td>${task[i].task}</td>
           <td><button class= "deleteBtn">Delete</button></td>
           <td><button class= "completeBtn">Complete</button></td>
         </tr>

@@ -8,7 +8,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static('server/public'));
 
 
-let taskrouter =('./routes/task.router');
+let taskrouter = require('./routes/task.router');
 app.use('/task', taskrouter);
 
 
