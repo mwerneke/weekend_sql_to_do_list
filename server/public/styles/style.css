@@ -27,13 +27,16 @@
 
 .deleteBtn{
     background-color: tomato;
+    border-radius: 10%;
 }
 
 #submit-task{
     background-color: yellowgreen;
+    border-radius: 10%;
 }
 .completeBtn{
     background-color: yellowgreen;
+    border-radius: 10%;
 }
 td{
     Font-Family: 'Overpass', Sans-Serif;
