@@ -8,17 +8,15 @@ function onReady(){
     getTask();
     $('#taskToTableBody').on('click', '.deleteBtn', deleteTheTask);
     $('#taskToTableBody').on('click', '.completeBtn', Complete, );
-    $('#taskToTableBody').on('click', '.completeBtn', defaultColor, );
+    
 
 };
-function defaultColor(){
-    $(this).closest('tr').addClass('green');
-}
+
 
 function addTask() {
     let task = {
     task:$(`#task`).val(),
-    is_complete: true ///whatever is here change DB 
+    is_complete: false ///whatever is here change DB 
     }   
     $.ajax({
       type: 'POST',
@@ -59,7 +57,7 @@ function addTask() {
   
   function Complete(){
     console.log('complete', $(this));
-    let tr = $(this).parents('tr');
+    let tr = $(this).closest('tr');
     console.log('tr', tr);
     let id = tr.data('id');
     console.log('datarow', id);
