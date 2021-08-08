@@ -42,9 +42,10 @@ router.post('/', (req, res) => {  //Should this be ID
 //PUT into DB
 router.put('/:id', (req,res) => {
   console.log('id is', req.params.id);
-//    
-  let sqlQuery = `
-UPDATE "tasks"
+
+  //Having a very difficult time getting this to change the False in
+  //DB to True. 
+  let sqlQuery = `     
 SET "is_complete" = true
 WHERE "is_complete" = $1;`;
   let sqlParams = [req.body.id]
