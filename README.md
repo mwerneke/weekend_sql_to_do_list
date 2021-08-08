@@ -19,7 +19,7 @@ You are going to create a 'TO DO' application. This type of application is very 
 [x] When task is created, it should be appended to DOM showing tasks to be completed
 [x] Each inserted task should have a deleteBtn and completeBtn
 [] Make sure that when task is marked complete, the container on Dom changes it from Gray to Green  -- in CSS
-[] In Database have Completed Column True or False - Boolean
+[x] In Database have Completed Column True or False - Boolean
 [x] When Deleted, it should be removed from front and back end
 
 
@@ -27,7 +27,7 @@ You are going to create a 'TO DO' application. This type of application is very 
 
 Use CSS styling to move the aesthetic of the page beyond the vanilla HTML look:
   - background color of the page
-  - font family and size
+  [x]- font family and size
   - text color & or background color of tasks *to show whether or not they have been completed
 
 ### Database Structure
@@ -40,8 +40,8 @@ For each of your strech goals, you will be practicing git branching. Please refe
 
 - `feature-styling-bootstrap` 
 
-    - [ ]  Add Bootstrap to the front end and style it up!
-      -  Buttons -- make the creation buttons and completion buttons green and the delete red.
+    - [x]  Add Bootstrap to the front end and style it up!
+      [x]-  Buttons -- make the creation buttons and completion buttons green and the delete red.
       -  Inputs -- make your text inputs styled in the bootstrap way
       -  Responsive -- make your app responsive to different screen sizes -- check out the [Layout](https://getbootstrap.com/docs/4.1/layout/overview/) section
 

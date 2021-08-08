@@ -14,28 +14,49 @@
 <style>
 
 .jumbotron{
-    background-color:#2E2D88;
-    Font-Family: 'Overpass', Sans-Serif;
-    Font-Size: 17px;
+    background-color:#f0b369;
+    color:white;
     text-align: center;
+    
+}
 
+.tab-content {
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    padding: 10px;
+}
+.nav-tabs {
+    margin-bottom: 0;
+}
+
+.bkg{
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvqslzlCB1faqoKYs7baBqYFUnUx7P-dtulA&usqp=CAU"); 
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 
 </style>
 <main>
 <body>
+    <div class = "bkg"> 
    <div class="container">
     <div class="page-header">
+        
         <h1>Weekend to do Tasks</h1>
     </div>
     </div>
+    </div>
         <div class="jumbotron">
-            <h2>What do you need to do this weekend?</h2>
+            <h2>Let's make sure we check off those To Do's this weekend. Add your task lists to the table below, to keep you on track.</h2>
         </div>
+        <div class= "submits">
             <input type="text" id="task" placeholder="Task">
             <button id="submit-task">Add to Task List</button>   
-        <table class="table table-striped">
+        </div>
+        
+            <table class="table table-striped">
             <thead>
                 <tr>
                     <th scope= "col">Task</th>
@@ -57,10 +78,10 @@
     <section>
     </main>
     </body>
+
     </html> 
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
-
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
 
 </body>
 </html>

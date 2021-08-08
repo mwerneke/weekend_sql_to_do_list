@@ -2,8 +2,9 @@
     background-color:#DCDCDC;
 }
 
-.green{
+#green{
     background-color: #7FFF00;
+    
 }
 
 
@@ -12,6 +13,35 @@
     Font-Size: 54px;
     text-align: center;
 
+}
+.submits{
+    text-align: center;
+    Font-Family: 'Overpass', Sans-Serif;
+    Font-Size: 14px;
+    
+
+}
+#task{
+    text-align: center;
+}
+
+.deleteBtn{
+    background-color: tomato;
+}
+
+#submit-task{
+    background-color: yellowgreen;
+}
+.completeBtn{
+    background-color: yellowgreen;
+}
+td{
+    Font-Family: 'Overpass', Sans-Serif;
+    Font-Size: 14px;
+}
+
+#jumbotron{
+    background-color: teal;
 }
 
 

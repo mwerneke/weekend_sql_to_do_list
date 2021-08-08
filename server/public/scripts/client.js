@@ -68,20 +68,20 @@ function addTask() {
         url: `/task/${id}`, //POSSIBLE BUGGGGGGG!!!
     }).then((res) => {
         console.log('PUT Task', res);
-      getTask();
+        getTask();
+    $(this).parents('tr').children('td').toggleClass("green");
+
     }).catch((err) => {
         console.log('PUT /Task error',err);
         alert('PUT TASKS FAILED')
-    });
+    })
   }
 
   function renderTask(task) {
     $('#taskToTableBody').empty();
-  
-    for(let i = 0; i < task.length; i += 1) {
-      // For each Task, append 
+    for(let i = 0; i < task.length; i ++) {
       $('#taskToTableBody').append(`
-        <tr id="green" data-id=${task[i].id}>
+        <tr data-id=${task[i].id}>
           <td>${task[i].task}</td>
           <td><button class= "deleteBtn">Delete</button></td>
           <td><button class= "completeBtn">Complete</button></td>       
