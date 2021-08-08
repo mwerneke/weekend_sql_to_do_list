@@ -1,18 +1,24 @@
 $(document).ready(onReady);
 
+
+
 function onReady(){
     console.log('JS Sourced');
     $('#submit-task').on('click', addTask);
     getTask();
     $('#taskToTableBody').on('click', '.deleteBtn', deleteTheTask);
-    $('#taskToTableBody').on('click', '.completeBtn', Complete)
-     
+    $('#taskToTableBody').on('click', '.completeBtn', Complete, );
+    $('#taskToTableBody').on('click', '.completeBtn', defaultColor, );
+
 };
-    
+function defaultColor(){
+    $(this).closest('tr').addClass('green');
+}
+
 function addTask() {
     let task = {
     task:$(`#task`).val(),
-    is_complete: false
+    is_complete: true ///whatever is here change DB 
     }   
     $.ajax({
       type: 'POST',
@@ -57,13 +63,14 @@ function addTask() {
     console.log('tr', tr);
     let id = tr.data('id');
     console.log('datarow', id);
+ 
     
     $.ajax({
         method: 'PUT',
         url: `/task/${id}`, //POSSIBLE BUGGGGGGG!!!
     }).then((res) => {
         console.log('PUT Task', res);
- //   //  getTask();
+      getTask();
     }).catch((err) => {
         console.log('PUT /Task error',err);
         alert('PUT TASKS FAILED')
@@ -76,11 +83,11 @@ function addTask() {
     for(let i = 0; i < task.length; i += 1) {
       // For each Task, append 
       $('#taskToTableBody').append(`
-        <tr data-id=${task[i].id}>
+        <tr id="green" data-id=${task[i].id}>
           <td>${task[i].task}</td>
           <td><button class= "deleteBtn">Delete</button></td>
-          <td><button class= "completeBtn">Complete</button></td>
-        </tr>
+          <td><button class= "completeBtn">Complete</button></td>       
+          </tr>
       `);
     }
   }

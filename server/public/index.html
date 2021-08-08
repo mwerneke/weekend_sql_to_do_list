@@ -4,16 +4,19 @@
     <meta charset="UTF-8">
     <script src="vendors/jquery.js"></script>
     <script src="scripts/client.js"></script>
-    
-    
+    <link rel="stylesheet" href="styles/style.css">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weekend to do Tasks...</title>
 </head>
 <body>
-    <header>
+   <div class="container">
+    <div class="page-header">
         <h1>Weekend to do Tasks</h1>
-    </header>
+    </div>
+    </div>
+    
+    
     <main>
         <h2>What do you need to do this weekend?</h2>
                  <input type="text" id="task" placeholder="Task">
@@ -25,12 +28,15 @@
                     <th>Complete</th>
                 </tr>
             </thead>
+        <div id = "main">
             <tbody id="taskToTableBody">
             </tbody>
+        </div>
         </table>
     </section>
     <section>
     </main>
-    
+    </body>
+    </html> 
 </body>
 </html>

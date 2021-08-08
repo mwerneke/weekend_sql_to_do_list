@@ -44,12 +44,10 @@ router.put('/:id', (req,res) => {
   console.log('id is', req.params.id);
 //    
   let sqlQuery = `
-//    INSERT INTO "tasks"
-//    VALUES = $1;
-//    `;
-  let sqlParams = [
-    req.params.task 
-  ];
+UPDATE "tasks"
+SET "is_complete" = true
+WHERE "is_complete" = $1;`;
+  let sqlParams = [req.body.id]
   pool.query(sqlQuery, sqlParams)
   .then(dbRes =>{
       res.sendStatus(200);

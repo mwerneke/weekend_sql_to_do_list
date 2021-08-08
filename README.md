@@ -32,7 +32,7 @@ Use CSS styling to move the aesthetic of the page beyond the vanilla HTML look:
 
 ### Database Structure
 
-[]Add all queries to the databse
+[x]Add all queries to the databse
 
 ## Stretch Goals
 

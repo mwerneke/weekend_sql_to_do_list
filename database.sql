@@ -4,3 +4,10 @@ CREATE TABLE "tasks" (
 	"completed" BOOLEAN DEFAULT FALSE
 );
 
+
+
+SELECT * FROM "tasks";
+
+UPDATE "tasks"
+SET "is_complete" = true
+WHERE "is_complete" = false;
