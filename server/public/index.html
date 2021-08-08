@@ -4,39 +4,83 @@
     <meta charset="UTF-8">
     <script src="vendors/jquery.js"></script>
     <script src="scripts/client.js"></script>
-    <link rel="stylesheet" href="styles/style.css">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weekend to do Tasks...</title>
-</head>
-<body>
-   <div class="container">
-    <div class="page-header">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles/style.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab|Ruda" rel="stylesheet">
+<style>
+.jumbotron{
+    background-color:#2E2D88;
+    color:white;
+    opacity: 0.7;
+    margin: .2%;
+    padding: 30px;
+    border-top: white;
+    border-spacing: .2%;
+}
+.tabcontent{
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    padding: 10px;
+}
+.navtabs{
+    margin-bottom: 0;
+}
+.bkg{
+    background-image: url('https://news.gsu.edu/files/2020/11/milky-way.jpg');
+    background-size: cover;
+
+}
+.buttons{
+margin-left: auto;
+margin-right: auto;
+}
+
+</style>
+<div class="bkg">
+    </head>
+    <body>  
+    <div class= "container"
+    <div class= "page-header">
         <h1>Weekend to do Tasks</h1>
     </div>
+
+    <div class="jumbotron">
+        <p>Let's take care of some tasks this Weekend. Make a list of the things you would like to knock of your ToDo List.</p>
     </div>
-    
-    
+    </div>  
     <main>
-        <h2>What do you need to do this weekend?</h2>
-                 <input type="text" id="task" placeholder="Task">
-            <button id="submit-task">Add to Task List</button>   
-        <table>
-            <thead>
-                <tr>
-                    <th>Task</th>
-                    <th>Complete</th>
-                </tr>
-            </thead>
-        <div id = "main">
-            <tbody id="taskToTableBody">
-            </tbody>
-        </div>
-        </table>
-    </section>
-    <section>
+        <div class="bkg">
+            <div class="buttons">
+        <div class = heading>
+        <h2>Let's Make it Happen</h2>
+    </div>
+     <div class = input>
+             <input type="text" id="task" placeholder="Task">
+                <button  id="submit-task">Add to Task List</button>   
+                </div>
+                    <table>          
+                    <th>Task</th>   
+                    </thead>
+                        <tbody id="taskToTableBody">
+                        </tbody>          
+                    </table>
+                </div>
+            </div>
+        </section>
+        <section>
+    
     </main>
     </body>
+    </body>
     </html> 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
 </body>
+
+
+
 </html>

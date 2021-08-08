@@ -8,12 +8,12 @@ function onReady(){
     getTask();
     $('#taskToTableBody').on('click', '.deleteBtn', deleteTheTask);
     $('#taskToTableBody').on('click', '.completeBtn', Complete, );
-    $('#taskToTableBody').on('click', '.completeBtn', defaultColor, );
+    //$('#taskToTableBody').on('click', '.completeBtn', defaultColor, );
 
 };
-function defaultColor(){
-    $(this).closest('tr').addClass('green');
-}
+//function defaultColor(){
+//    $(this).closest('tr').addClass('green');
+//}
 
 function addTask() {
     let task = {
