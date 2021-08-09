@@ -49,9 +49,8 @@ function addTask() {
       }).then(function(res) {
         console.log(res);
         renderTask(res);
-      }).catch(function(err){
-        console.log('error in GET', err);
-        });
+      
+        })
     }  
 
   
@@ -69,7 +68,6 @@ function addTask() {
     }).then((res) => {
         console.log('PUT Task', res);
         getTask();
-    $(this).parents('tr').children('td').toggleClass("green");
 
     }).catch((err) => {
         console.log('PUT /Task error',err);
@@ -80,8 +78,16 @@ function addTask() {
   function renderTask(task) {
     $('#taskToTableBody').empty();
     for(let i = 0; i < task.length; i ++) {
+      $(this).parents('tr').children('td').toggleClass('green');      
+      let itemCssClass
+      if (task[i].is_complete){
+        itemCssClass ='green'
+      }
+      else{
+        itemCssClass = '';
+      }
       $('#taskToTableBody').append(`
-        <tr data-id=${task[i].id}>
+        <tr data-id=${task[i].id} class="${itemCssClass}">
           <td>${task[i].task}</td>
           <td><button class= "deleteBtn">Delete</button></td>
           <td><button class= "completeBtn">Complete</button></td>       
